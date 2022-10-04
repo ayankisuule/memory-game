@@ -58,10 +58,11 @@ const makePost = ({ id, title, body, image }) => {
         img.innerHTML = image;
       }
     };
-    updaters.push(update);
+    updaters.unshift(update);
   }
 };
 
+// loading state
 const get = () =>
   new Promise((ok) => {
     setTimeout(() => ok({ posts }), 500);
@@ -79,17 +80,20 @@ const refresh = async () => {
   }
   root.classList.remove("loading");
 };
+/////////////////////////////////////
 
 document.getElementById("create").addEventListener("submit", (evt) => {
   evt.preventDefault();
   const title = evt.target.post_title.value;
   const body = evt.target.post_body.value;
+  const image = evt.target.post_image.value;
   evt.target.post_title.value = "";
   evt.target.post_body.value = "";
-  if (!title || !body) {
-    return;
+  evt.target.post_image.value = "";
+  if (!title || !body || !image) {
+   return
   }
-  const post = { id: posts.length, title, body };
+  const post = { id: posts.length, title, body, image };
   posts.push(post);
   refresh();
 });
