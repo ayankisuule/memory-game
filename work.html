@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <style>
+      #loading {
+        display: none;
+      }
+
+      .loading #loading {
+        display: block;
+      }
+
+      #post_model {   
+  margin: 3%;
+  position: relative;
+  width:350px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <div id="root">
+        <div id="loading" aria-label="loading">...loading</div>
+        <button id="button">load</button>
+        <form id="create">
+          <input name="post_title" placeholder="title" />
+          <input name="post_body" placeholder="body" />
+          <input type="submit" value="ok" />
+        </form>
+      </div>
+      <div id="post_model" style="border:3px solid red" width="90px">
+        <!-- <img
+          src="https://images.unsplash.com/photo-1615796153287-98eacf0abb13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=60"
+          alt="meme"
+          width="250px"
+        /> -->
+        <h1>title</h1>
+        <p>body</p>
+        <img src="" alt="cats" id="myTag" width="350px" height="300px" />
+      </div>
+    </div>
+    <script src="./main2.js"></script>
+  </body>
+</html>
